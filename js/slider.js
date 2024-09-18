@@ -106,7 +106,9 @@ window.addEventListener('load', () => {
         rewind();
       } else if (
         Math.ceil(slides.scrollLeft) ===
-        slides.scrollWidth - slides.offsetWidth
+          slides.scrollWidth - slides.offsetWidth ||
+        Math.ceil(slides.scrollLeft) ===
+          slides.scrollWidth - slides.offsetWidth + 1
       ) {
         forward();
       }

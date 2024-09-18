@@ -199,12 +199,17 @@ h2 {
   color: #fff;
 }
 
+section#review {
+  padding: 80px 30px 40px;
+}
+
 .review-wrapper {
   display: flex;
   z-index: 1;
   inline-size: 100%;
   position: relative;
   height: 415px;
+  margin-bottom: 40px;
 }
 
 .review-wrapper .review__slides {
@@ -240,8 +245,9 @@ h2 {
   scroll-snap-align: start;
   position: relative;
   flex: 0 0 auto;
-  height: 360px;
-  flex-shrink: 0;
+  height: 80%;
+  min-height: 360px;
+  /* flex-shrink: 0; */
   border-radius: 10px;
   padding: 160px 30px 30px;
   text-align: left;
@@ -363,8 +369,10 @@ h2 {
 
 footer {
   background: #000000;
-  padding: 50px 0;
+  padding: 50px;
   color: #fff;
+  display: flex;
+  flex-direction: column;
 }
 
 .footer-title {
@@ -389,27 +397,16 @@ footer {
 }
 
 .footer-bottom {
-  overflow: hidden;
-  clear: both;
-}
-
-.copyright {
+  display: flex;
+  justify-content: space-between;
   margin-top: 20px;
   color: #313131;
-}
-
-.copyright a {
   font-weight: bold;
-  color: inherit;
   text-decoration: underline;
 }
 
 a.link-privacy {
-  float: right;
-  margin-top: 20px;
-  color: #313131;
-  font-weight: bold;
-  text-decoration: underline;
+  color: inherit;
 }
 
 .privacy_text h4 {
@@ -421,8 +418,13 @@ a.link-privacy {
 }
 
 @media (max-width: 995px) {
+  section#review {
+    padding-left: 70px;
+  }
+
   .review-wrapper .review__slides {
     grid-auto-columns: 100%;
+    gap: 30px;
   }
 
   .review-wrapper .review-box img {
@@ -435,11 +437,11 @@ a.link-privacy {
     left: 30%;
   }
 
-  .review-box {
+  .review__slides .review-box {
     width: 90%;
     scroll-snap-align: center;
     height: 70%;
-    min-height: 350px;
+    min-height: 380px;
   }
 
   .review-box .re {
@@ -470,13 +472,24 @@ a.link-privacy {
   section {
     padding: 60px 5px;
   }
-  .review-wrapper .review__slides {
-    min-height: 480px;
+  section#review {
+    padding-left: 30px;
   }
+  .review-wrapper .review__slides {
+    gap: 15px;
+  }
+
+  .review-wrapper .review-box {
+    padding: 160px 15px 10px;
+    width: 100%;
+    height: 90%;
+    margin: 0;
+  }
+
   .review-box .autor,
   .review-box .text {
     font-size: 14px;
-    line-height: 1.4;
+    line-height: 1.5;
   }
 
   .review-box .autor .date {
@@ -488,30 +501,50 @@ a.link-privacy {
     height: 85px;
   }
 
-  .review-nav {
-    margin-top: 30px;
+  .review-wrapper .review-nav {
+    margin: 0;
+    left: 10%;
+    text-align: center;
   }
 
   .review-dots {
     text-align: center;
-    padding: 50px 20px 0 0;
+    padding: 0;
   }
-  .footer-action .btn {
-    float: none;
-    margin-right: 0;
-    width: 100%;
-    margin-bottom: 15px;
+
+  footer {
+    padding: 30px 15px 20px;
   }
-  .copyright {
+
+  .footer-bottom,
+  .footer-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-block: 15px;
     text-align: center;
   }
+
+  .footer-action .btn.main-btn {
+    float: none;
+    margin: 0 0 15px;
+    width: 80%;
+  }
+
   .link-privacy {
     float: none;
     display: inline-block;
     width: 100%;
     text-align: center;
+    margin-top: 15px;
   }
   .footer-title {
     text-align: center;
+  }
+}
+
+@media (max-width: 350px) {
+  .review-wrapper {
+    height: 500px;
   }
 }
